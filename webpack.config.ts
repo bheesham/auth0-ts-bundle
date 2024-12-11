@@ -1,6 +1,7 @@
-const path = require('path');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
+const config: webpack.Configuration = {
   entry: {
     first: {
       import: './actions/first.ts',
@@ -17,7 +18,7 @@ module.exports = {
   },
   externals: [
     function(ctx, callback) {
-      if (/^@(slack|aws-sdk)/.test(ctx.request)) {
+      if (ctx.request && /^@(slack|aws-sdk)/.test(ctx.request)) {
         return callback(null, `node-commonjs ${ctx.request}`);
       }
       callback()
@@ -42,3 +43,5 @@ module.exports = {
     preferRelative: true,
   },
 };
+
+export default config;
