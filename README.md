@@ -14,6 +14,9 @@ npm run test
 # NOTE: the tests will fail, because there are side-effects. To use this for
 # realsies you'd need to mock stuff out (probably).
 
+# Run the linter:
+npm run lint
+
 # And then build:
 npm run build
 
