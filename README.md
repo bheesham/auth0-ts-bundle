@@ -11,6 +11,9 @@ npm install
 # Run the tests:
 npm run test
 
+# NOTE: the tests will fail, because there are side-effects. To use this for
+# realsies you'd need to mock stuff out (probably).
+
 # And then build:
 npm run build
 
