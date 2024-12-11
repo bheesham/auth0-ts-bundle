@@ -23,7 +23,7 @@ module.exports = {
       callback()
     },
   ],
-  target: 'es2020',
+  target: 'es2022',
   mode: 'production',
   optimization: {
     minimize: false,
