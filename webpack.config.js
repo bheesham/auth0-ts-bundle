@@ -13,8 +13,17 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    chunkFormat: 'commonjs',
   },
-  target: 'node',
+  externals: [
+    function(ctx, callback) {
+      if (/^@(slack|aws-sdk)/.test(ctx.request)) {
+        return callback(null, `node-commonjs ${ctx.request}`);
+      }
+      callback()
+    },
+  ],
+  target: 'es2020',
   mode: 'production',
   optimization: {
     minimize: false,

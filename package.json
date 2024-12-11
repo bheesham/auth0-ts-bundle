@@ -21,6 +21,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@aws-sdk/client-ssm": "^3.709.0",
     "@slack/webhook": "^7.0.4"
   }
 }
